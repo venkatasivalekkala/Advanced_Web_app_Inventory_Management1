@@ -1,0 +1,121 @@
+
+
+html, body{
+color: #FFFFFF;
+
+}
+
+body{
+background-image: url(/~jadrn013/proj2/images/loginBack.jpg); 
+min-height: 800px;
+min-width: 98%;
+position:relative;
+}
+
+body, html{
+font-family: Arial, Helvetica, sans-serif;
+background-color: #ECECEA;
+}
+
+h1{
+text-align: center;
+color: #DE8642;
+font-size: 200%;
+}
+
+h2{
+text-align:center;
+color: #333399;
+} 
+  
+#menu{
+text-align: center;
+width: 100%;
+padding: 15px 0px 15px 0px;
+background: #660033;
+}
+	 
+#menu ul {
+text-align: center;
+margin-bottom: 30px;
+}
+		
+#menu li {
+display: inline;
+margin-left: -5px;
+}
+		
+#menu a {
+text-decoration: none;
+padding: 10px 10px 10px 10px;
+margin: 10px 0px 10px 0px;
+font-weight: bold;
+border: 5px solid #660033;
+color:  white;
+background-color: #660033;
+}
+
+#menu a:hover {
+border: 5px solid #FF2E89;
+background-color: #FF2E89;
+}
+
+#menu li a.selected {
+text-decoration: underline;
+border-color: #FF2E89;
+background-color: #FF2E89;
+}
+
+ul{
+list-style-type: none;
+}
+
+ul.inlineobjects li{
+display: inline-block;
+text-align: left;
+padding-bottom: 20px;
+}
+
+#tabs{
+text-align: center;
+}
+
+ #message_line{
+color: #FFF;
+text-align:center;
+font-style: italic;
+padding-bottom: 3%;
+height: 2px;
+font-size: 120%;
+}
+
+
+
+#submit , #reset {
+    background-color: #660000 ;
+    border: none;
+    color: white;
+    padding:10px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 12px;
+    margin: 15px;
+}
+label{
+    padding-right: 40px;
+
+
+}
+#table li {
+
+    min-width: 150px;
+}
+.selected{
+    text-decoration: underline;
+    background-color: red;
+}
+span{
+    color: red;   
+}
