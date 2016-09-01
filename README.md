@@ -1,4 +1,4 @@
-# Project2_Advanced_Web_app
+# Project1_Advanced_Web_app
 
 #CS645 Spring 2015 - Advanced Web Application Development
 
