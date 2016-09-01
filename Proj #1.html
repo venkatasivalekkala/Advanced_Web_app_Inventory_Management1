@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0039)http://pindar.sdsu.edu/cs645/proj1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>SDSU - CS645</title>
+
+	
+<style type="text/css">
+h1, h2, h3 { text-align: center; }
+.centered { text-align: center; }
+</style>
+<style type="text/css"></style></head>
+
+
+<body>
+
+<div>
+
+
+
+
+<h2>CS645 Spring 2015</h2>
+<h3>Advanced Web Application Development</h3>
+    <img src="./Proj #1_files/red_bar.gif" height="4" width="100%" alt="red line">
+<h2>Programming Assignment #1</h2>
+<div class="centered">
+    <i>125 Points</i>   
+</div>
+<h3>Due Date/Time:</h3>
+    <p>
+    Your project is due at 4:00 P.M San Diego time on Thursday, February 26th.  As 
+    this is a large project, you should start on it right away.  It will take longer 
+    to complete than you might first think.
+    </p>
+    <p>
+    The entry point for your project is a file called <tt>index.html</tt>.  
+    Make a new folder in your <tt>public_html/</tt> folder called "<tt>proj1</tt>" and 
+    place the <tt>index.html</tt> in it.  Thus, the first page of your 
+    project (the login screen) will be displayed if the user directs the 
+    browser to: <tt> http://jadran.sdsu.edu/~jadrnXXX/proj1</tt>
+    </p>
+    <h3>Perl/CGI/Javascript/SQL Review Assignment:</h3>
+    <p>
+    This assignment is designed to review and reinforce fundamental principles 
+    of dynamic programming.  The tools you may use for this project are:  
+    Perl <i>(mod_perl only)</i>, xhtml/html 5, CSS 3, Javascript, and the MySQL database on opatija.  
+    You may use a Javascript library 
+    such as JQuery if you wish. For this project, you must use Perl for all 
+    scripts.
+    </p>
+    <p>  You will create 
+    an <b>online store selling some type of merchandise</b>. The type of products you 
+    choose to sell is entirely up to you.  Some suggestions:  
+    </p>
+    <ul>
+        <li>cameras</li>
+        <li>shoes</li>
+        <li>clothing</li>
+        <li>jewelry</li>
+        <li>DVDs</li>
+        <li>software</li>
+        <li>food products</li> 
+    </ul>
+    <p>
+    </p><p>
+    Give some thought to your choice;  you will be creating 
+    additional projects (#2 and #3) using this online retail model.  
+    You should design an 
+    attractive and appealing theme or Look and Feel for your project.
+    Please review the Project Design Guidelines (link at left).
+    </p>
+    <p>
+    For this first assignment you will create a portion of an inventory 
+    application for your online retail site.  This portion is an application 
+    to allow a buyer to create inventory records for new products that the 
+    retailer will sell.  The application consists of the following:
+    </p>
+    <ul>
+        <li><b>A login screen</b>. &nbsp;&nbsp;The user must supply an 
+        authorized 
+        username/password pair to gain access to the system.</li>
+        <li><b>Menu page</b>. &nbsp;&nbsp;Once login succeeds, 
+        the user will
+        be presented with a page that gives choices to:
+        <ul>
+            <li>New Inventory Record, <i>add a new record</i></li>
+            <li>Edit Inventory Record <i>change some or all of an existing record</i></li>
+            <li>Delete Inventory Record <i>remove a record from the system</i></li>
+            <li>Log out of the system</li>
+        </ul>
+       Rather than a blank page with four links, load the New Inventory Record page 
+       as the default, with links clearly available for the other choices
+       (tabs are a good choice here).</li>
+        <li><b>Confirmation</b>. &nbsp;&nbsp;After any of the above actions, 
+        you must display a confirmation, recapping the information 
+        just submitted, along with a message that the submission was successful 
+        (or not as the case may be).  This may be a new page, or you may use AJAX
+        to display the information in the existing page.</li>
+    </ul>
+    <h3>The Details:</h3> 
+    <p>
+    <b>The Login Screen</b><br>
+    Present the user with two fields, the <i>username</i> and <i>password</i>. The form 
+    should also have a <i>clear</i> and a <i>submit</i> button.  If the user enters a valid
+    username/password, the Menu page will load.  If the login is invalid, then 
+    the login screen should reappear, along with a helpful error message.
+    </p>
+    <p>Username/password pairs should be stored in a text file on the server (<b>not</b> in the MySQL
+    database).  The 
+    username should be stored in plain text, and the password should be stored in an 
+    encrypted form.  You may <b>not</b> hardcode any username/password pairs in your Perl code.
+    You must have at least five valid username/password pairs, one of which <b>must</b> 
+    be:
+    </p>
+    <pre>    username:   cs645
+    password:   sp2015
+    </pre>
+    <p>
+    You must use POST as the parameter passing method.  Use Javascript to place the 
+    cursor on the username field when the page loads.  Simple things can mean a lot for 
+    useability.  The user should not have to grab the mouse and manually give focus 
+    to the username field.
+    </p>
+    <p>
+    You must save state.  Access to the add/edit/delete portion of the system 
+    can only be allowed for authorized users.  Note that it is not sufficient to display
+    the add/edit/delete page on successful login.  You must validate the user on submission 
+    of data.
+    </p>
+    <p>
+    <b>The New Inventory Item screen</b><br>
+    This is the form for adding a new item to the online store's inventory.  New items 
+    must be stored in the MySQL database on opatija.sdsu.edu.  For this project you will 
+    create tables with the following fields, all of which are <b>required</b>, not optional.  
+    <i>This means that the user must provide this information when entering an 
+    inventory record</i>:    
+    </p>
+<ul>
+    <li><b>SKU</b> The stock number.  This is a seven digit string, 
+    with three capital 
+    letters, followed by a dash, followed by a three digit number.  Examples:  ARC-001,
+    ZZF-992 etc.  This will be the primary key in the inventory table, and as such it 
+    must be distinct (no duplicates).  <i>Retailers
+    generally use a proprietary code to identify each item they sell.  The code is meaningful 
+    only to the retailer.  Example:  item number at Costco</i></li>
+    <li><b>Category</b>  Almost all types of products need a category.  For example, camera 
+    categories might be:  DSLR, Point and Shoot, Underwater/weather-proof, film etc.
+    <i>Some types of products may need subcategories.  Add this if you need to.  Example: Shoes, 
+    dress, casual, walking, athletic, and these categories may be valid for men, women, or 
+    children</i>.</li>
+    <li><b>Vendor</b>    The name of manufacturer or brand of the item.</li>
+    <li><b>Manufacturer's Identifier</b> Mandatory field.  This is either a name or item 
+    number used by the manufacturer to identify the product.</li>
+    <li><b>Description</b>   One paragraph that describes the new item.  
+    It should be suitable for displaying on the consumer page that will come later.  
+    i.e. it should be geared 
+    toward customers.</li>
+    <li><b>Product Features</b>    A list-oriented specification of the
+    features or properties of the inventory item.</li>
+    <li><b>Cost</b>   Currency format, this is the price the retailer pays
+    the manufacturer for the product.  Note, the $ symbol should not be used with the cost.</li>
+    <li><b>Retail</b>  Currency format, the retail price that customers 
+    will pay for the product. <i>[ You 
+    will need to add inventory items for project submission.  Please select reasonable 
+    values for the cost and retail prices.  Set the retail price about 25% above cost. ]</i></li>
+    <li><b>Product Image</b>   An image of the new inventory item which may 
+    be uploaded.  Store the filename along with the rest of the fields in the form in the 
+    MySQL database, but store the actual image file in a folder on the server.</li>
+</ul>
+<p>
+    Here is an example record:
+</p>
+<hr>
+<pre>SKU:    WEH-094
+Vendor: Nikon 
+Manufacturer's Identifier:  D4
+Description:    Enter the new flagship of Nikon's D-SLR lineup:  D4.  Engineered for
+                professionals, D4 strikes an ideal balance between resolution, sensor
+                size, image processing and ISO range.  Its newlhy designed FX-format
+                sensor and EXPEED3 processor enables image capture up to 10 fts with
+                full AE/AF performance and Full 1080p HD video.  Combine that with
+                cutting-edge metering and AF systems, intelligently designed controls,
+                an ultra-rugged body and multiple connectivity options, and D4 liberates
+                the world's top-notch photographers and multimedia artist like never before.
+
+
+Product Features:  
+
+                FX full frame format
+                16.2 megapixels
+                10 FPS continuous shooting
+                ISO range 100-12,800 (expandable to 204,800)
+                HD video with stereo sound
+                3.2" Clear View LCD screen (921,000 pixels)
+                    
+Cost:   4652.50
+Retail: $5999.95
+Product Image:  d4_camera.png  
+</pre>
+<img src="./Proj #1_files/d4_camera.png" width="112px" height="88px" alt="Canon 5D Camera">
+<hr>
+<p>
+You must use Javascript to validate the form.  As much as possible, your Javascript
+should help the user enter correct information.  Think carefully about how you implement 
+the validation.  Be sure to use Javascript to put focus on the first field when the 
+page loads.
+</p>
+<p>
+A note about your project database tables.  Good design will require a minimum of three 
+tables in your database:  SKU, category, and vendor.  You do <b>not</b> need 
+to make any provision for creating/editing/deleting records from the category 
+and vendor tables.  This is an appropriate simplification.  Any needed changes 
+may be made by interacting with the database directly.  This is not as uncommon 
+as it may sound--buyers often need to submit requests to the system administrator 
+for such actions.
+</p>
+<b>Edit Inventory Page</b>
+<p>
+This screen allows the buying office to change any field in the form except for the SKU.
+You should allow
+the buyer to search for a record to modify, using the SKU field only.  Populate the form 
+with the existing data, which the buyer may change and save.  Once an edit has
+been completed, the record must validate correctly.  If the user needs to change an SKU,
+the record must be deleted and re-added.
+</p>
+<b>Delete Inventory Page</b>
+<p>
+This screen allows the buyer to delete an inventory record from the system.  You should 
+allow the buyer to search for the record to delete by SKU only.  Note:  Delete should be 
+allowed only in cases where a given SKU has had no activity. That is, to delete items that 
+have never been stocked or sold.  However, since we are creating 
+this application first, you need not make any provision for this.
+</p>
+
+<b>Confirmation Page</b>
+<p>
+Every action (add/edit/delete/logout) should result in a confirmation that displays 
+the status of the action.  If an error occurs, display a helpful
+error message.  In any case, if you send a confirmation page, 
+include at the top of the page a link to take the user
+back to the login screen or menu page as is appropriate.  Note:  you must insure that only
+authorized users have access to the system.
+</p>
+
+
+
+
+    <h3>Project Submission</h3>
+    For this project, you will submit two things:
+    <ol>
+        <li>Deploy your application to jadran.  If you build your application on your home 
+        computer, you must insure that it is properly deployed on jadran.</li>
+        <li>Create an empty file in your <tt>public_html/proj1/</tt> folder named 
+        <tt>'finished'</tt>.  If this file does not exist in your project folder, it 
+        will not be graded.  Please see the Project Submission Guidelines (link at left).</li>
+    </ol>
+
+        <h3>Grading:</h3>
+        <p>
+        Your grade will be determined based on four criteria: inclusion of 
+        the minimum specifications, validity and quality of your code, the creative and 
+        professional appearance of your project, and also the usability.
+        </p>
+
+        <h3>Cheating:</h3> 
+        <p>
+        Just a reminder here.  Collaboration  is not permitted for this 
+        course. You are expected to complete all project assignments 
+        <b>on your own</b>. 
+        You must write all xhtml/html, css, Javascript and Perl code on your own.
+        You may use JQuery or any other Javascript library if you wish.
+        You may <b>not</b> use any code generation 
+        tools (Dreamweaver, Frontpage etc). Collaboration with anyone , or 
+        use of 
+        code generation tools is considered cheating.  If you adapt or copy 
+        code from the Internet, be sure to cite the source.  This should be 
+        limited to specific techniques.  Any student 
+        caught cheating on the projects or a midterm exam will receive an "F" in the 
+        course, and a report will be filed with the University.
+        </p>
+
+</div>
+
+</body></html>
