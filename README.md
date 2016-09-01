@@ -1,13 +1,7 @@
 # Project2_Advanced_Web_app
 
-#CS645 Spring 2015
+#CS645 Spring 2015 - Advanced Web Application Development
 
-#Advanced Web Application Development
-
-#Programming Assignment #1
-
-125 Points
-#Due Date/Time:
 
 Your project is due at 4:00 P.M San Diego time on Thursday, February 26th. As this is a large project, you should start on it right away. It will take longer to complete than you might first think.
 
